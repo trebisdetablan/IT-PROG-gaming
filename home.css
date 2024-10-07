@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Genty Sans';
+    src: url(GentySans-Regular.ttf);
+}
+
+.topbar {
+    display: flex;
+    padding-left: 40px;
+    height: auto;
+}
+
+.storename h2 {
+    font-family: 'Genty Sans', Helvetica, Arial;
+}
+
+.navbar {
+    margin-left: auto;
+}
+
+.navbar button {
+    font-family: Helvetica, Arial, sans-serif;
+    height: 100%;
+    width: 80px;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+}
+
+.body {
+    display: flex;
+}
+
+.text {
+    padding-left: 50px;
+}
+
+.text h1 {
+    font-family: 'Genty Sans', Helvetica, Arial;
+}
+
+.text p {
+    font-family: Helvetica, Arial, sans-serif;
+}
