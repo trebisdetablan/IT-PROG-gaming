@@ -48,7 +48,7 @@
 
 .text {
     padding-left: 50px;
-    width: 60%;
+    width: 100%;
 }
 
 .text h1 {
@@ -57,32 +57,4 @@
 
 .text p {
     font-family: 'Montserrat Arabic', Arial, sans-serif;
-}
-
-.imgcont {
-    width: 40%;
-}
-
-.polaroid {
-    background-color: #f4f4f4;
-    width: 350px;
-    height: 420px;
-    padding-top: 10px;
-    box-shadow: 5px 5px 5px gray;
-
-}
-
-.image {
-    background-color: black;
-    width: 295px;
-    height: 295px;
-    margin: 0 auto;
-}
-
-.image p {
-    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
-    font-size: 20px;
-    color: white;
-    line-height: 250px;
-    text-align: center;
 }
