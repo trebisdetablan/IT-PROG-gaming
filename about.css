@@ -75,33 +75,3 @@ body{
 .text p {
     font-family: 'Montserrat Arabic', Arial, sans-serif;
 }
-
-.imgcont {
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.polaroid {
-    background-color: #f4f4f4;
-    width: 350px;
-    height: 420px;
-    padding-top: 10px;
-    box-shadow: 5px 5px 5px gray;
-    text-align: center;
-}
-
-.image {
-    background-color: black;
-    width: 295px;
-    height: 295px;
-    margin: 0 auto;
-}
-
-.image p {
-    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
-    font-size: 20px;
-    color: white;
-    line-height: 295px;
-    text-align: center;
-}

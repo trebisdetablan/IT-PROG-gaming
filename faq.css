@@ -54,7 +54,7 @@ body{
 }
 
 .body {
-    padding-top: 50px;
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -64,12 +64,14 @@ body{
 }
 
 .text {
-    padding-left: 50px;
+    padding-left: 150px;
     width: 60%;
 }
 
 .text h1 {
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 55px;
+    padding-bottom: 10px;
 }
 
 .text p {
@@ -104,4 +106,33 @@ body{
     color: white;
     line-height: 295px;
     text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.question {
+    font-size: 30px;
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.question:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+.answer {
+    font-size: 20px;
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    display: none;
+    padding: 8px;
+    background-color: white;
+    border-radius: 10px;
 }
