@@ -46,7 +46,7 @@
             <span class="close-button" id="close-modal">&times;</span>
             <h2>Filter Pets</h2>
             <label for="filter-type">Type:</label>
-            <select id="filter-type">
+            <select id="filter-type" class="filter-type">
                 <option value="all">All</option>
                 <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>
@@ -56,12 +56,12 @@
             <label for="filter-age">Age:</label>
             <input type="number" id="filter-age" placeholder="Enter max age">
             <label for="filter-gender">Gender:</label>
-            <select id="filter-gender">
+            <select id="filter-gender" class="filter-gender">
                 <option value="all">All</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
-            <button id="apply-filters">Apply Filters</button>
+            <button id="apply-filters" class="apply-filters">Apply Filters</button>
         </div>
     </div>
 
