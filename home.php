@@ -12,7 +12,7 @@
             <button onclick="document.location='home.php'">Home</button>
             <button onclick="document.location='about.php'">About</button>
             <button onclick="document.location='pets.php'">Pets</button>
-            <button onclick="document.location='faq.php'">FAQ</button>
+            <button onclick="document.location='faq.php'">FAQs</button>
             <button onclick="document.location='user.php'" class="user"><img src="user.png"/></button>
         </div>
     </div>

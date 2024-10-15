@@ -14,6 +14,14 @@ body{
     overflow-x: hidden;
 }
 
+.sections{
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 .topbar {
     display: flex;
     padding: 20px 40px;
@@ -27,11 +35,8 @@ body{
 }
 
 .navbar {
-    margin-left: auto;
-    overflow: auto;
     display: flex;
     gap: 10px;
-
 }
 
 .navbar button {
@@ -44,7 +49,7 @@ body{
     cursor: pointer;
 }
 
-.navbar button:hover { 
+.navbar button:hover {
     background-color: lightgray;
     border-radius: 15px;
 }
@@ -54,58 +59,60 @@ body{
     height: 47px;
 }
 
-.navbar button:hover { 
-    background-color: lightgray;
+.user-section {
+    flex: 1;
+    padding-left: 170px;
 }
 
-.user img {
-    width: 40px;
-    height: 47px;
+.user-section img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px gray;
 }
 
-.body {
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.details-section {
+    flex: 3;
     max-width: 100%;
-    margin: 0 auto;
-    padding-right: 50px;
 }
 
-.text {
-    padding-left: 50px;
-    width: 60%;
-}
-
-.text h1 {
+.name-section {
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 50px;
+    margin-bottom: 10px;
 }
 
-.text p {
-    font-family: 'Montserrat Arabic', Arial, sans-serif;
+.favorites-section, .adoptions-section {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.favorites-section h2, .adoptions-section h2 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 35px;
 }
 
 .imgcont {
-    width: 40%;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .polaroid {
     background-color: #f4f4f4;
-    width: 350px;
-    height: 420px;
+    width: 300px;
+    height: 400px;
     padding-top: 10px;
     box-shadow: 5px 5px 5px gray;
-    text-align: center;
+    flex-shrink: 0;
 }
 
 .image {
     background-color: black;
-    width: 295px;
-    height: 295px;
+    width: 260px;
+    height: 260px;
     margin: 0 auto;
 }
 
@@ -113,6 +120,14 @@ body{
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
     font-size: 20px;
     color: white;
-    line-height: 295px;
     text-align: center;
+    line-height: 260px;
+}
+
+.pet-name{
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    line-height: 75px;
 }
