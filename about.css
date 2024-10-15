@@ -31,6 +31,7 @@ body{
     overflow: auto;
     display: flex;
     gap: 10px;
+
 }
 
 .navbar button {
@@ -66,6 +67,7 @@ body{
 .text {
     padding-left: 50px;
     width: 60%;
+
 }
 
 .text h1 {
@@ -75,3 +77,4 @@ body{
 .text p {
     font-family: 'Montserrat Arabic', Arial, sans-serif;
 }
+
