@@ -53,7 +53,7 @@ CREATE TABLE `hearts` (
 --
 
 CREATE TABLE `pet_info` (
-  `id` int(16) NOT NULL,
+  `pet_id` int(16) NOT NULL,
   `name` varchar(32) NOT NULL,
   `species` varchar(32) NOT NULL,
   `availability` int(1) NOT NULL,
@@ -70,6 +70,7 @@ CREATE TABLE `pet_info` (
 --
 
 CREATE TABLE `user_info` (
+  `user_id` int(16) NOT NULL,
   `username` varchar(21) NOT NULL,
   `email` varchar(320) NOT NULL,
   `password` varchar(64) NOT NULL,
@@ -99,13 +100,13 @@ ALTER TABLE `hearts`
 -- Indexes for table `pet_info`
 --
 ALTER TABLE `pet_info`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`pet_id`);
 
 --
 -- Indexes for table `user_info`
 --
 ALTER TABLE `user_info`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
