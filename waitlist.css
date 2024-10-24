@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Genty Sans';
+    src: url('../public/fonts/GentySans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat Arabic';
+    src: url('../public/fonts/Montserrat-Arabic-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+}
+
+.topbar {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.storename h2 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+}
+
+.navbar {
+    margin-left: auto;
+    overflow: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.navbar button {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    height: 55px;
+    width: 80px;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
+.user img {
+    width: 40px;
+    height: 47px;
+}
+
+.waitlist-container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.text {
+    padding-bottom: 20px;
+}
+
+.text h1 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+}
+
+.text p {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+}
+
+.order {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.order h2 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.order p {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.status {
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.imgcont {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.polaroid {
+    background-color: #f4f4f4;
+    width: 350px;
+    height: 420px;
+    padding-top: 10px;
+    box-shadow: 5px 5px 5px gray;
+    text-align: center;
+}
+
+.image {
+    background-color: black;
+    width: 295px;
+    height: 295px;
+    margin: 0 auto;
+}
+
+.image p {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 20px;
+    color: white;
+    line-height: 295px;
+    text-align: center;
+}
