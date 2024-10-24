@@ -37,22 +37,22 @@
         <div class="gallery">
             <div class="imgcont flex space-x-4">
                 <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
-                    <img alt="Picture of Peekaboo" class="h-48 w-full object-cover mb-4" src="public/images/Peekaboo.png"/>
+                    <img alt="Picture of Peekaboo" class="h-48 w-full object-cover mb-4" src="../public/images/Peekaboo.png"/>
                     <div class="text-center font-bold">Peekaboo</div>
                 </div>
                 <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
-                    <img alt="Picture of Hansolo" class="h-48 w-full object-cover mb-4" src="public/images/hansolo.png"/>
+                    <img alt="Picture of Hansolo" class="h-48 w-full object-cover mb-4" src="../public/images/hansolo.png"/>
                     <div class="text-center font-bold">Hansolo</div>
                 </div>
                 <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
-                    <img alt="Picture of Periwinkle" class="h-48 w-full object-cover mb-4" src="public/images/periwinkle.png"/>
+                    <img alt="Picture of Periwinkle" class="h-48 w-full object-cover mb-4" src="../public/images/periwinkle.png"/>
                     <div class="text-center font-bold">Periwinkle</div>
                 </div>
                 <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
-                    <img alt="Picture of Gustav" class="h-48 w-full object-cover mb-4" src="public/images/gustavo.png"/>
+                    <img alt="Picture of Gustav" class="h-48 w-full object-cover mb-4" src="../public/images/gustavo.png"/>
                     <div class="text-center font-bold">Gustav</div>
                     <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
-                    <img alt="Picture of Chanel" class="h-48 w-full object-cover mb-4" src="public/images/chanel.png"/>
+                    <img alt="Picture of Chanel" class="h-48 w-full object-cover mb-4" src="../public/images/chanel.png"/>
                     <div class="text-center font-bold">Chanel</div>
                    </div>
                 </div>

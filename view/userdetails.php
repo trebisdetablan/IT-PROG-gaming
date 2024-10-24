@@ -23,8 +23,6 @@
             <h2>Order Summary</h2>
             <ul>
                 <li>Pet</li>
-                <li>Item 1</li>
-                <li>Item 2</li>
             </ul>
         </div>
         <hr>
