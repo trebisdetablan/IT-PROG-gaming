@@ -1,3 +1,18 @@
+<?php include '../models/dbcredentials.php'; 
+$conn = new mysqli($servername, $username, $password, $database);
+
+// connects to user information 
+$sql = "SELECT * FROM user_info";
+$result = $conn->query($sql);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+echo "Connected successfully <br>";
+?>
+
 <html>
 <head>
     <title>User | Store Name</title>
