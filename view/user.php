@@ -15,7 +15,7 @@ echo "Connected successfully <br>";
 
 <html>
 <head>
-    <title>User | Store Name</title>
+    <title>Bini's Buddies</title>
     <link rel="stylesheet" href="../public/css/user.css">
 </head>
 <body>

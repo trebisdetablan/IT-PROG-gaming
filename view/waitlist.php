@@ -9,7 +9,7 @@
 <body>
     <div class="topbar">
         <div class="storename">
-            <h2>Store Name</h2>
+            <h2>Bini's Buddies</h2>
         </div>
         <div class="navbar">
             <button onclick="document.location='home.php'">Home</button>
