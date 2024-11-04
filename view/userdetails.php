@@ -6,7 +6,7 @@
 <body>
     <div class="form">
         <h1 class="title_card">Shipping details & Adopter’s information</h1>
-        <form class="detail_form" action="home.html">
+        <form class="detail_form" action="waitlist.php" method="POST">
             <input type="text" class="input" name="first_name" placeholder="Firstname"><br>
             <input type="text" class="input" name="last_name" placeholder="Lastname"><br>
             <input type="text" class="input" name="phone_number" placeholder="Phone Number"><br>
@@ -15,7 +15,7 @@
             <input type="text" class="input" name="city" placeholder="City"><br>
             <input type="text" class="input" name="email" placeholder="Email"><br>
             <br>
-            <button class="next_button" type="button">Next</button>
+            <button class="next_button" type="submit">Next</button>
         </form>
     </div>
     <div class="order_list">
