@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="form">
         <h1 class="title_card">SIGNUP</h1>
-        <form class="detail_form" action="home.html">
+        <form class="detail_form" action="signup.php" method="POST">
             <input type="text" class="input" name="username" placeholder="Username" required><br>
             <input type="text" class="input" name="email" placeholder="Email" required><br>
             <input type="text" class="input" name="password" placeholder="Password" required><br>
