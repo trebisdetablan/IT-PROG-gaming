@@ -57,8 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="form">
         <h1 class="title_card">LOGIN</h1>
         <form class="detail_form" action="welcome.php">
-            <input type="text" class="input" name="username" placeholder="Username"><br>
-            <input type="text" class="input" name="password" placeholder="Password"><br>
+            <input type="text" class="input" name="username" placeholder="Username" required><br>
+            <input type="text" class="input" name="password" placeholder="Password" required><br>
             <br>
             <button class="register_button" type="submit">Login</button>
         </form>
