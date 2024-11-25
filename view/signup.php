@@ -1,7 +1,7 @@
 <?php
 include '../models/dbcredentials.php';
 
-// Start session to handle errors or success messages if needed
+// Start a session to store potential error messages if needed
 session_start();
 
 // Check if the form was submitted
@@ -43,8 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement and check for success
     if ($stmt->execute()) {
-        echo "Registration successful!";
-        header("Location: home.php"); // Redirect to home page after successful signup
+        // Registration successful, redirect to login page
+        header("Location: login.php"); // Redirect to login page
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
 
 <html>
 <head>
