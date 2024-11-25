@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
     // Insert user into the database
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO user_info (username, email, password) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if ($stmt === false) {
         die("Error preparing statement: " . $conn->error);

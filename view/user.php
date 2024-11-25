@@ -28,13 +28,12 @@ $user_result = $stmt->get_result();
 $user = $user_result->fetch_assoc();
 
 // Fetch user's favorite pets
-$favorites_sql = "SELECT pets.* FROM favorite_pets 
-                  JOIN pets ON favorite_pets.pet_id = pets.id 
-                  WHERE favorite_pets.user_id = ?";
+/*
+$favorites_sql = "";
 $favorites_stmt = $conn->prepare($favorites_sql);
 $favorites_stmt->bind_param("i", $user_id);
 $favorites_stmt->execute();
-$favorites_result = $favorites_stmt->get_result(); 
+$favorites_result = $favorites_stmt->get_result(); */ 
 ?>
 
 

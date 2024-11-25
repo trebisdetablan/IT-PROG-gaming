@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST['password']);
 
     // Search for the user in the database
-    $sql = "SELECT * FROM users WHERE username = ?";
+    $sql = "SELECT * FROM user_info WHERE username = ?";
     $stmt = $conn->prepare($sql);
     if ($stmt === false) {
         die("Error preparing statement: " . $conn->error);
