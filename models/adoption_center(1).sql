@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2024 at 08:31 AM
+-- Generation Time: Nov 04, 2024 at 11:52 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,7 +53,7 @@ CREATE TABLE `hearts` (
 --
 
 CREATE TABLE `pet_info` (
-  `pet_id` int(16) NOT NULL,
+  `id` int(16) NOT NULL,
   `name` varchar(32) NOT NULL,
   `species` varchar(32) NOT NULL,
   `availability` int(1) NOT NULL,
@@ -70,14 +70,14 @@ CREATE TABLE `pet_info` (
 --
 
 CREATE TABLE `user_info` (
-  `user_id` int(16) NOT NULL,
   `username` varchar(21) NOT NULL,
   `email` varchar(320) NOT NULL,
   `password` varchar(64) NOT NULL,
   `phone_number` int(15) DEFAULT NULL,
   `address` varchar(500) DEFAULT NULL,
   `zip_code` varchar(10) DEFAULT NULL,
-  `city` varchar(168) DEFAULT NULL
+  `city` varchar(168) DEFAULT NULL,
+  `is_admin` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -100,13 +100,13 @@ ALTER TABLE `hearts`
 -- Indexes for table `pet_info`
 --
 ALTER TABLE `pet_info`
-  ADD PRIMARY KEY (`pet_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user_info`
 --
 ALTER TABLE `user_info`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
