@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $username; // Store user info in session
-            header("Location: home.php"); // Redirect to home page after successful login
+            header("Location: welcome.php"); // Redirect to welcome page
             exit();
         } else {
             echo "Invalid password.";
@@ -47,21 +47,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
-<html></html>
-<head>
-    <title>Log In</title>
-    <link rel="stylesheet" href="../public/css/input_form.css">
-</head>
-<body>
-    <div class="form">
-        <h1 class="title_card">LOGIN</h1>
-        <form class="detail_form" action="welcome.php">
-            <input type="text" class="input" name="username" placeholder="Username" required><br>
-            <input type="text" class="input" name="password" placeholder="Password" required><br>
-            <br>
-            <button class="register_button" type="submit">Login</button>
-        </form>
-    </div>
-</body>
-</html>
