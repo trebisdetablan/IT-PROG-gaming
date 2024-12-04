@@ -53,15 +53,19 @@ CREATE TABLE `hearts` (
 --
 
 CREATE TABLE `pet_info` (
-  `id` int(16) NOT NULL,
-  `name` varchar(32) NOT NULL,
-  `species` varchar(32) NOT NULL,
-  `availability` int(1) NOT NULL,
-  `age` int(2) NOT NULL,
-  `gender` varchar(1) NOT NULL,
-  `personality` varchar(64) NOT NULL,
-  `description` varchar(512) NOT NULL
+  `id` INT AUTO_INCREMENT PRIMARY KEY,  
+  `name` VARCHAR(32) NOT NULL,
+  `type` VARCHAR(32) NOT NULL,
+  `breed` VARCHAR(32) NOT NULL, 
+  `availability` INT(1) NOT NULL,
+  `age` INT(2) NOT NULL,
+  `gender` VARCHAR(1) NOT NULL,
+  `personality` VARCHAR(64) NOT NULL,
+  `coat` VARCHAR(512) NOT NULL, 
+  `eyes` VARCHAR(512) NOT NULL, 
+  `image_url` VARCHAR(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
@@ -99,8 +103,7 @@ ALTER TABLE `hearts`
 --
 -- Indexes for table `pet_info`
 --
-ALTER TABLE `pet_info`
-  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Indexes for table `user_info`
