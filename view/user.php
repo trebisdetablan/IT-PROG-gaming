@@ -135,3 +135,4 @@ $adoptions_stmt->close();
 // Close the database connection
 $conn->close();
 ?>
+ 
