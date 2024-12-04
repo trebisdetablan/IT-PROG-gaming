@@ -89,6 +89,9 @@ $stmt->close();
     <div class="sections">
     <div class="user-section">
         <img src="../public/images/user.png" alt="User Image"/>
+         <form action="logout.php" method="POST" style="margin-top: 10px;">
+        <button type="submit" class="logout-button" style="width: 150px; padding: 12px; margin: 10px 0; background-color: red; color: white; font-size: 16px; border: none; border-radius: 8px; cursor: pointer;">Logout</button>
+    </form>
     </div>
     <div class="details-section">
         <h2 class="name-section"><?php echo htmlspecialchars($user['username']); ?></h2>
