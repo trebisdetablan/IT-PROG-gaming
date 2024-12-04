@@ -131,3 +131,8 @@ body{
     text-align: center;
     line-height: 75px;
 }
+
+a {
+    text-decoration: none;
+}
+
