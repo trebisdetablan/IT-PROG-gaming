@@ -1,5 +1,19 @@
-<html>
+<?php
+// Start the session
+session_start();
+
+// Check if a session is not already set, but there's a username cookie
+if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+    $_SESSION['username'] = $_COOKIE['username'];
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../public/css/home.css">
 </head>
@@ -13,9 +27,22 @@
             <button onclick="document.location='about.php'">About</button>
             <button onclick="document.location='pets.php'">Pets</button>
             <button onclick="document.location='faq.php'">FAQs</button>
-            <button onclick="document.location='user.php'" class="user"><img src="../public/images/user.png"/></button>
+
+            <!-- Check if the user is logged in -->
+            <?php if (isset($_SESSION['username'])): ?>
+                <!-- If logged in, show profile button -->
+                <button onclick="document.location='user.php'" class="user">  <?php echo $_SESSION['username'] ?>
+                    <img src="../public/images/user.png" alt="User"/> 
+                </button>
+            <?php else: ?>
+                <!-- If not logged in, show login button -->
+                <button onclick="document.location='login.php'" class="user"> login
+                    <img src="../public/images/user.png" alt="User"/> 
+                </button>
+            <?php endif; ?>
         </div>
     </div>
+
     <div class="body">
         <div class="text">
             <h1>HOME</h1>
@@ -23,9 +50,9 @@
         </div>
         <div class="imgcont">
             <div class="polaroid">
-                <!-- placeholder for image -->
+                <!-- Placeholder for image -->
                 <div class="image">
-                    <p>image</p>
+                    <p>Image</p>
                 </div>
             </div>
         </div>
