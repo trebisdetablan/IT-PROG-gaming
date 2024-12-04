@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the statement and check for success
     if ($stmt->execute()) {
         // Registration successful, redirect to login page
-        header("Location: login.php"); // Redirect to login page
+        header("Location: login.html"); // Redirect to login page
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -56,23 +56,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-<html>
-<head>
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="../public/css/input_form.css">
-</head>
-<body>
-    <div class="form">
-        <h1 class="title_card">SIGNUP</h1>
-        <form class="detail_form" action="signup.php" method="POST">
-            <input type="text" class="input" name="username" placeholder="Username" required><br>
-            <input type="text" class="input" name="email" placeholder="Email" required><br>
-            <input type="text" class="input" name="password" placeholder="Password" required><br>
-            <input type="text" class="input" name="confirm_password" placeholder="Confirm Password" required><br>
-            <br>
-            <button class="register_button" type="submit">Register</button>
-        </form>
-    </div>
-</body>
-</html>
