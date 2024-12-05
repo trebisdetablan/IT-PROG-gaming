@@ -1,6 +1,9 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $method = $_POST['method'];
+    $date = isset($_POST['date']) ? htmlspecialchars($_POST['date']) : null;
+    $time = isset($_POST['time']) ? htmlspecialchars($_POST['time']) : null;
+    
     $storeDetails = $method === "Pick Up" ? "
         <p>Store Address: 1234 Adoption Street, Quezon City</p>
         <p>Contact Number: (02) 1234-5678</p>
@@ -15,9 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <title>Thank You | Bini's Buddies</title>
         <style>
             @font-face {
-                font-family: 'Genty Sans';
-                src: url('GentySans-Regular.ttf');
+            font-family: 'Genty Sans';
+            src: url('/LOL/public/css/GentySans-Regular.ttf') format('truetype')
             }
+            
             * {
                 margin: 0;
                 padding: 0;
@@ -26,12 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             body {
                 font-family: 'Genty Sans', Arial, sans-serif;
                 background-color: #f8f8f8;
-                color: #333;
+                color: #black;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
-                overflow-x: hidden;
                 flex-direction: column;
                 text-align: center;
             }
@@ -43,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 font-weight: bold;
             }
             .confirmation {
-                text-align: center;
                 padding: 20px;
                 margin-top: 50px;
                 background-color: #f4f4f4;
@@ -54,11 +56,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             .confirmation h1 {
                 font-size: 30px;
-                color: #333;
+                color: black;
             }
             .confirmation p {
                 font-size: 18px;
                 color: #666;
+            }
+            .main-menu-btn {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: black;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                font-family: 'Genty Sans', Arial, sans-serif;
             }
         </style>
     </head>
@@ -67,7 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class='confirmation'>
             <h1>Thank you for adopting!</h1>
             <p>You have chosen to receive your buddy via: " . htmlspecialchars($method) . "</p>
+            <p>Date: $date</p>
+            <p>Time: $time</p>
             $storeDetails
+            <button class='main-menu-btn' onclick=\"location.href='pets.php';\">Return to Main Menu</button>
         </div>
     </body>
     </html>";
@@ -82,8 +98,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <style>
         @font-face {
             font-family: 'Genty Sans';
-            src: url('GentySans-Regular.ttf');
+            src: url('/LOL/public/css/GentySans-Regular.ttf') format('truetype')
         }
+
         * {
             margin: 0;
             padding: 0;
@@ -92,64 +109,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         body {
             font-family: 'Genty Sans', Arial, sans-serif;
             background-color: #f8f8f8;
-            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow-x: hidden;
             flex-direction: column;
-            text-align: center;
         }
         .topbar {
             position: absolute;
             top: 20px;
             left: 20px;
-            font-family: 'Genty Sans', Arial, sans-serif;
             font-size: 24px;
             font-weight: bold;
-            color: #333;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
+            color: black;
+        }
         .body {
             width: 100%;
             max-width: 600px;
             padding: 40px;
             background-color: #fff;
             border-radius: 8px;
-            border: 1px solid #ddd;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         h1 {
             font-size: 28px;
             margin-bottom: 30px;
-            color: #333;
         }
         .option-box {
             display: inline-flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            text-align: center;
             background-color: white;
-            padding: 15px; 
-            width: 180px; 
-            height: 120px; 
+            padding: 15px;
+            width: 150px;
+            height: 60px;
             border: 3px solid #333;
             margin: 20px;
             border-radius: 12px;
-            position: relative;
             cursor: pointer;
-            transition: 0.3s ease;
+            transition: 0.3s;
         }
         .option-box:hover {
             background-color: #f1f1f1;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .option-box p {
-            font-size: 18px;
-            color: #333;
-            font-weight: bold;
         }
         input[type="radio"] {
             display: none;
@@ -158,13 +161,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-color: #4CAF50;
             background-color: #e8f5e9;
         }
+        .schedule {
+            margin-top: 10px;
+        }
         button {
+            font-family: 'Genty Sans', Arial, sans-serif;
+            margin-top: 20px;
             padding: 12px 30px;
-            font-size: 16px;
-            border: none;
-            border-radius: 25px;
             background-color: black;
             color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
             cursor: pointer;
         }
     </style>
@@ -173,19 +181,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="topbar">Bini's Buddies</div>
     <div class="body">
         <h1>How would you like to receive your buddy?</h1>
-        <form action="adoption.php" method="POST">
+        <form action="" method="POST">
             <label>
                 <input type="radio" name="method" value="Delivery" required>
-                <div class="option-box">
-                    <p>Delivery</p>
-                </div>
+                <div class="option-box">Delivery</div>
             </label>
             <label>
                 <input type="radio" name="method" value="Pick Up" required>
-                <div class="option-box">
-                    <p>Pick Up</p>
-                </div>
+                <div class="option-box">Pick Up</div>
             </label>
+            <div class="schedule">
+                <label>
+                    <p>Select Date:</p>
+                    <input type="date" name="date" required>
+                </label>
+                <label>
+                    <p>Select Time:</p>
+                    <input type="time" name="time" required>
+                </label>
+            </div>
             <button type="submit">Submit</button>
         </form>
     </div>

@@ -29,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $address = trim($_POST['address']);
     $zip_code = trim($_POST['zip_code']);
     $city = trim($_POST['city']);
+    
+    // Get pet_id from POST data if it exists
+    $pet_id = isset($_POST['pet_id']) ? $_POST['pet_id'] : null;
 
     // Update user information in the database
     $sql = "UPDATE user_info SET phone_number = ?, address = ?, zip_code = ?, city = ? WHERE username = ?";
@@ -40,9 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("sssss", $phone_number, $address, $zip_code, $city, $username);
 
     if ($stmt->execute()) {
-        echo "Information updated successfully!";
-        // Optionally, redirect to another page (e.g., profile or user info page)
-        header("Location: adoption.php");
+        // Redirect to adoption page with pet_id if the update is successful
+        if ($pet_id) {
+            header("Location: adoption.php?pet_id=" . urlencode($pet_id));
+        } else {
+            // Redirect to a default page if pet_id is not available
+            header("Location: user.php");
+        }
         exit();
     } else {
         echo "Error updating information: " . $stmt->error;

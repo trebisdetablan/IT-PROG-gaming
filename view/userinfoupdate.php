@@ -1,9 +1,11 @@
 <?php
-// Start session
 session_start();
 
 // Include database credentials
 include '../models/dbcredentials.php';
+
+// Get pet_id from query string if it exists
+$pet_id = isset($_GET['pet_id']) ? $_GET['pet_id'] : null;
 
 // Redirect to login page if the user is not logged in
 if (!isset($_SESSION['username'])) {
@@ -53,6 +55,7 @@ $conn->close();
         <div class="update-form">
             <h2>Update Information</h2>
             <form class="detail_form" action="update_user_info.php" method="POST">
+                <input type="hidden" name="pet_id" value="<?php echo htmlspecialchars($pet_id); ?>">
                 <input type="text" class="input" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" placeholder="Username" readonly><br>
                 <input type="email" class="input" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" placeholder="Email" readonly><br>
                 <input type="text" class="input" name="phone_number" value="<?php echo htmlspecialchars($user['phone_number']); ?>" placeholder="Phone Number" required><br>
