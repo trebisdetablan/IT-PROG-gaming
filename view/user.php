@@ -122,8 +122,14 @@ $stmt->close();
                 <?php } ?>
             </div>
         </div>
+        <div class="waitlist-section">
+        <h2>Waitlisted Adoptions</h2>
+        <form action="waitlist.php" method="GET">
+            <button type="submit" class="waitlist-button" style="width: 150px; padding: 12px; margin-top: 20px; background-color: #007bff; color: white; font-size: 16px; border: none; border-radius: 8px; cursor: pointer;">Check Waitlist</button>
+        </form>
     </div>
-</div>
+    </div>
+    </div>
 
 </body>
 </html>
