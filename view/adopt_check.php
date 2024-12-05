@@ -40,13 +40,23 @@ $stmt->execute();
 $user_result = $stmt->get_result();
 $user = $user_result->fetch_assoc();
 
+// Debugging output to verify user data
+/*if (!$user) {
+    die("User data not found in the database.");
+}
+
+echo "<pre>";
+print_r($user);
+echo "</pre>";
+exit(); */ 
+
 // Check if user info is complete (you can add more fields as required)
-if (empty($user['address']) || empty($user['phone_number']) || empty($user['city']) || empty($user['zip'])) {
+if (empty(trim($user['address'])) || empty(trim($user['phone_number'])) || empty(trim($user['city'])) || empty(trim($user['zip_code']))) {
     // Redirect to user info update page
     header("Location: userinfoupdate.php");
 } else {
     // Redirect to adoption summary page
-    header("Location: userdetails.php?pet_id=$pet_id");
+    header("Location: adoption.php");
 }
 
 $stmt->close();
