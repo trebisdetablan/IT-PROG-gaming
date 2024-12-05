@@ -46,13 +46,13 @@ if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
     <div class="body">
         <div class="text">
             <h1>HOME</h1>
-            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Eros ante donec porta eu pretium bibendum mauris.</p>
+            <p>Welcome to Bini's Buddies, the home of amazing and wonderful pets waiting to be adopted and cherished!</p>
         </div>
         <div class="imgcont">
             <div class="polaroid">
                 <!-- Placeholder for image -->
                 <div class="image">
-                    <p>Image</p>
+                    <p><img src="../public/images/hansolo.png"/></p>
                 </div>
             </div>
         </div>

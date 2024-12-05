@@ -72,9 +72,11 @@ body{
 
 .text h1 {
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 30px;
 }
 
 .text p {
     font-family: 'Montserrat Arabic', Arial, sans-serif;
+    font-size: 30px;
 }
 
