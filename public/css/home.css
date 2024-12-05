@@ -80,10 +80,12 @@ body{
 
 .text h1 {
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 45px;
 }
 
 .text p {
     font-family: 'Montserrat Arabic', Arial, sans-serif;
+    font-size: 35px;
 }
 
 .imgcont {
@@ -107,6 +109,11 @@ body{
     width: 295px;
     height: 295px;
     margin: 0 auto;
+}
+
+.image img{
+    width: 295px;
+    height: 295px;
 }
 
 .image p {
