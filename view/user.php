@@ -46,10 +46,10 @@ $favorites_stmt->bind_param("s", $username);
 $favorites_stmt->execute();
 $favorites_result = $favorites_stmt->get_result();
 
-// Fetch user's past adoptions
+// Fetch user's accepted adoptions
 $adoptions_sql = "SELECT pet_info.* FROM pet_info 
                   INNER JOIN adoptions ON pet_info.id = adoptions.pet_id
-                  WHERE adoptions.username = ?";
+                  WHERE adoptions.username = ? AND adoptions.accepted = 1";
 $adoptions_stmt = $conn->prepare($adoptions_sql);
 if ($adoptions_stmt === false) {
     die("Error preparing statement: " . $conn->error);
@@ -57,6 +57,7 @@ if ($adoptions_stmt === false) {
 $adoptions_stmt->bind_param("s", $username);
 $adoptions_stmt->execute();
 $adoptions_result = $adoptions_stmt->get_result();
+
 
 // Close the statement for user info
 $stmt->close();
