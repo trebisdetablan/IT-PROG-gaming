@@ -52,11 +52,13 @@ exit(); */
 
 // Check if user info is complete (you can add more fields as required)
 if (empty(trim($user['address'])) || empty(trim($user['phone_number'])) || empty(trim($user['city'])) || empty(trim($user['zip_code']))) {
-    // Redirect to user info update page
-    header("Location: userinfoupdate.php");
+    // Redirect to user info update page, passing the pet_id
+    header("Location: userinfoupdate.php?pet_id=" . urlencode($pet_id));
+    exit();
 } else {
-    // Redirect to adoption summary page
-    header("Location: adoption.php");
+    // Redirect to adoption summary page, passing the pet_id
+    header("Location: adoption.php?pet_id=" . urlencode($pet_id));
+    exit();
 }
 
 $stmt->close();
