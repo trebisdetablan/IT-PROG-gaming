@@ -8,7 +8,7 @@
     src: url(Montserrat-Arabic-Regular.ttf);
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -103,7 +103,7 @@ body{
     height: 20px;
 }
 
-.search-button{
+.search-button {
     font-family: 'Montserrat Arabic', Arial, sans-serif;
 }
 
@@ -126,14 +126,14 @@ body{
     height: 46px;
     width: auto;
     border-radius: 20px;
-    border: black
+    border: black;
 }
 
-.filter-button:hover{
+.filter-button:hover {
     background-color: lightgray;
 }
 
-.search-button:hover{
+.search-button:hover {
     background-color: lightgray;
 }
 
@@ -177,7 +177,7 @@ body{
     justify-content: center;
 }
 
-.gallery{
+.gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
@@ -191,7 +191,7 @@ body{
     line-height: 260px;
 }
 
-.pet-name{
+.pet-name {
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
     font-size: 20px;
     color: black;
@@ -223,11 +223,11 @@ body{
     border-radius: 15px;
 }
 
-.modal-content option, input{
+.modal-content option, input {
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
 }
 
-.apply-filters, .filter-gender, .filter-type{
+.apply-filters, .filter-gender, .filter-type {
     font-family: 'Genty Sans', 'Montserrat Arabic', Arial;  
 }
 
@@ -273,4 +273,24 @@ body{
     border-radius: 20px;
     font-size: 14px;
     display: inline-block;
+}
+
+.back-button-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.back-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
 }

@@ -51,16 +51,19 @@
                 <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
                     <img alt="Picture of Gustav" class="h-48 w-full object-cover mb-4" src="../public/images/gustavo.png"/>
                     <div class="text-center font-bold">Gustav</div>
-                    <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
+                </div>
+                <div class="bg-gray-200 border border-gray-300 shadow-md p-4 w-48">
                     <img alt="Picture of Chanel" class="h-48 w-full object-cover mb-4" src="../public/images/chanel.png"/>
                     <div class="text-center font-bold">Chanel</div>
-                   </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Filter Modal -->
+    <div class="back-button-container">
+        <button onclick="resetGallery()" class="back-button">Return to Main Menu</button> 
+    </div>
+
     <div id="filter-modal" class="modal">
         <div class="modal-content">
             <span class="close-button" id="close-modal">&times;</span>
@@ -85,7 +88,6 @@
         </div>
     </div>
 
-    <!-- Pet Details Modal -->
     <div id="pet-modal" class="modal">
         <div class="modal-content bg-white rounded-lg shadow-lg p-6 w-96 relative">
             <button class="absolute top-2 left-2 text-xl font-bold" id="close-modal">&times;</button>
@@ -101,17 +103,11 @@
             <p><strong>Personality:</strong> <span id="pet-personality"></span></p>
             <p><strong>Coat:</strong> <span id="pet-coat"></span></p>
             <p><strong>Eyes:</strong> <span id="pet-eyes"></span></p>
+            <button id="adopt-button" class="adopt-button" style="display:none;">Adopt</button>
         </div>
-    </div>
+    </div> 
 
     <script>
-
-        function toggleHeart() {
-            const heartIcon = document.getElementById('heart-icon');
-            heartIcon.classList.toggle('fas');
-            heartIcon.classList.toggle('far');
-        }
-
         window.onload = function () {
             const pets = [
                 { name: 'Peekaboo', type: 'Cat', breed: 'Domestic Cat', availability: 'Eligible', age: 3, gender: 'Male', personality: 'Friendly', coat: 'Gray, black, and white with black stripes and white paws', eyes: 'Bright yellow-green.', image: 'public/images/Peekaboo.png'},
@@ -124,8 +120,7 @@
             const gallery = document.querySelector('.gallery .imgcont');
             const petModal = document.getElementById('pet-modal');
             const closeModal = document.getElementById('close-modal');
-
-
+            const resetButton = document.querySelector('.back-button');
             const filterButton = document.getElementById('filter-button');
             const filterModal = document.getElementById('filter-modal');
             const applyFiltersButton = document.getElementById('apply-filters');
@@ -141,8 +136,6 @@
 
                     const image = document.createElement('div');
                     image.classList.add('image');
-
-                    
                     if (pet.image) {
                         image.style.backgroundImage = `url('${pet.image}')`;
                     }
@@ -157,32 +150,35 @@
                 });
             }
 
-            // Search for pets based on input
             const searchPets = (event) => {
-                event.preventDefault(); // Prevent form submission
+                event.preventDefault();
                 const query = searchInput.value.toLowerCase();
-
                 const filteredPets = pets.filter(pet => {
                     return pet.name.toLowerCase().includes(query) ||
                            pet.breed.toLowerCase().includes(query) ||
                            pet.type.toLowerCase().includes(query) ||
                            pet.gender.toLowerCase().includes(query);
                 });
-
                 updateGallery(filteredPets);
             };
 
-            // Open modal
+            searchForm.addEventListener('submit', searchPets);
+
+            function resetGallery() {
+                searchInput.value = ''; 
+                updateGallery(pets);
+            }
+
+            resetButton.addEventListener('click', resetGallery);
+
             filterButton.addEventListener('click', () => {
                 filterModal.style.display = 'block';
             });
 
-            // Close modal
             closeModal.addEventListener('click', () => {
                 filterModal.style.display = 'none';
             });
 
-            // Apply filters
             const applyFilters = () => {
                 const selectedType = document.getElementById('filter-type').value;
                 const breedInput = document.getElementById('filter-breed').value.toLowerCase();
@@ -193,7 +189,7 @@
                     const matchesType = selectedType === 'all' || pet.type === selectedType;
                     const matchesBreed = breedInput === '' || pet.breed.toLowerCase().includes(breedInput);
                     const matchesAge = maxAge === '' || pet.age <= maxAge;
-                    const matchesGender = selectedGender === 'all' || pet.gender === selectedGender;
+                    const matchesGender = selectedGender === 'all' || pet.gender.toLowerCase() === selectedGender;
 
                     return matchesType && matchesBreed && matchesAge && matchesGender;
                 });
@@ -202,63 +198,56 @@
                 filterModal.style.display = 'none';
             };
 
-            // Event listener for search form
-            searchForm.addEventListener('submit', searchPets);
-
             applyFiltersButton.addEventListener('click', applyFilters);
 
-            // Add event listeners to inputs for Enter key
             const inputs = document.querySelectorAll('#filter-breed, #filter-age');
             inputs.forEach(input => {
                 input.addEventListener('keypress', (event) => {
                     if (event.key === 'Enter') {
-                        event.preventDefault(); // Prevent form submission if inside a form
+                        event.preventDefault();
                         applyFilters();
                     }
                 });
             });
 
-            
-            function showPetDetails(pet) {
+            const showPetDetails = (pet) => {
                 document.getElementById('pet-name').textContent = pet.name;
                 document.getElementById('pet-type').textContent = pet.type;
                 document.getElementById('pet-breed').textContent = pet.breed;
                 document.getElementById('pet-availability').textContent = pet.availability;
-                document.getElementById('pet-age').textContent = pet.age + ' years';
+                document.getElementById('pet-age').textContent = `${pet.age} years`;
                 document.getElementById('pet-gender').textContent = pet.gender;
                 document.getElementById('pet-personality').textContent = pet.personality;
                 document.getElementById('pet-coat').textContent = pet.coat;
                 document.getElementById('pet-eyes').textContent = pet.eyes;
-
+                
                 const availabilityBadge = document.getElementById('availability-badge');
-                availabilityBadge.innerHTML = ''; 
-
+                const adoptButton = document.getElementById('adopt-button');
                 if (pet.availability.toLowerCase() === 'eligible') {
-                    availabilityBadge.innerHTML = `
-                        <div class="flex items-center">
-                            <i id="heart-icon" class="far fa-heart text-red-500 text-xl mr-2 cursor-pointer" onclick="toggleHeart()"></i>
-                            <button class="adopt-button">Adopt</button>
-                        </div>`;
-                } else if (pet.availability.toLowerCase() === 'adopted') {
-                    availabilityBadge.innerHTML = '<div class="taken-label">Taken</div>';
+                    availabilityBadge.textContent = 'Eligible';
+                    availabilityBadge.className = 'availability-badge adopt-button';
+                    adoptButton.style.display = 'block';
+                    adoptButton.onclick = () => {
+                        window.location.href = 'adoption.php';
+                    };
+                } else {
+                    availabilityBadge.textContent = 'Adopted';
+                    availabilityBadge.className = 'availability-badge taken-label';
+                    adoptButton.style.display = 'none';
                 }
                 
-                //if (pet.availability.toLowerCase() === 'eligible') {
-                //    availabilityBadge.innerHTML = '<button class="adopt-button">Adopt</button>';
-                //} else if (pet.availability.toLowerCase() === 'adopted') {
-                //    availabilityBadge.innerHTML = '<div class="taken-label">Taken</div>';
-                //}
-
                 petModal.style.display = 'block';
-            }
+            };
 
             closeModal.onclick = () => {
                 petModal.style.display = 'none';
             };
 
-            window.onclick = (event) => {
+            window.onclick = function(event) {
                 if (event.target === petModal) {
                     petModal.style.display = 'none';
+                } else if (event.target === filterModal) {
+                    filterModal.style.display = 'none';
                 }
             };
 
@@ -267,3 +256,5 @@
     </script>
 </body>
 </html>
+
+
