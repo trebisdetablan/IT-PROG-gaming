@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Genty Sans';
+    src: url(GentySans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat Arabic';
+    src: url(Montserrat-Arabic-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.topbar {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.storename h2 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 28px;
+}
+
+.navbar {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar button {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    height: 55px;
+    width: 80px;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
+.user img {
+    width: 40px;
+    height: 47px;
+}
+
+.pet-details {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+}
+
+.pet-details img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px gray;
+}
+
+.pet-details h2 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pet-details p {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.pet-details p strong {
+    font-weight: bold;
+    color: #000;
+}
+
+.pet-details .pet-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pet-details .pet-info div {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.pet-details .back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.pet-details .back-button:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.pet-details .adopt-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color for the adopt button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.pet-details .adopt-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    cursor: pointer;
+}
+
+.not-eligible {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    color: red;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .pet-details {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .pet-details img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .pet-details h2 {
+        font-size: 30px;
+    }
+
+    .pet-details p {
+        font-size: 16px;
+    }
+}

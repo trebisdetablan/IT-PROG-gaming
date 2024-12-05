@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Genty Sans';
+    src: url(GentySans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat Arabic';
+    src: url(Montserrat-Arabic-Regular.ttf);
+}
+
+h1, h2, p, li, label, button, input {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+}
+
+body {
+    padding-top: 30px;
+}
+
+.form {
+    float: left;
+    margin-left: 15%;
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-content: left;
+}
+
+.title_card {
+    text-align: left;
+    font-size: 30px;
+}
+
+.detail_form {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.input {
+    border-bottom: 3px;
+    border-color: black;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 25px;
+    width: 350px;
+    margin-bottom: 9px;
+    font-size: 18px;
+    color: rgba(0,0,0,0.26);
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.next_button {
+    background-color: #242424;
+    width: 175px;
+    height: 50px;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    border: none;
+}
+
+.order_list {
+    float: left;
+    background-color: #8F8F8F;
+    width: 30%;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+}
+
+.summary {
+    text-align: center;
+    padding-top: 1px;
+}
+
+.summary h2 {
+    font-size: 25px;
+}
+
+.summary ul li {
+    font-size: 18px;   
+}
+
+.order_list hr {
+    width: 90%;
+    border: 2px solid black;
+}
+
+.costs {
+    padding-left: 20px;
+}
+
+.costs p {
+    font-size: 22px;
+}

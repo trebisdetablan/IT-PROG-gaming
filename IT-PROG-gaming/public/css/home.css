@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Genty Sans';
+    src: url(GentySans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat Arabic';
+    src: url(Montserrat-Arabic-Regular.ttf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.topbar {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.storename h2 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+}
+
+.navbar {
+    margin-left: auto;
+    overflow: auto;
+    display: flex;
+    gap: 10px;
+
+}
+
+.navbar button {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    height: 55px;
+    width: 80px;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navbar button:hover { 
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
+.user img {
+    width: 40px;
+    height: 47px;
+}
+
+.navbar button:hover { 
+    background-color: lightgray;
+}
+
+.user img {
+    width: 40px;
+    height: 47px;
+}
+
+.body {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 50px;
+}
+
+.text {
+    padding-left: 50px;
+    width: 60%;
+}
+
+.text h1 {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 45px;
+}
+
+.text p {
+    font-family: 'Montserrat Arabic', Arial, sans-serif;
+    font-size: 35px;
+}
+
+.imgcont {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.polaroid {
+    background-color: #f4f4f4;
+    width: 350px;
+    height: 420px;
+    padding-top: 10px;
+    box-shadow: 5px 5px 5px gray;
+    text-align: center;
+}
+
+.image {
+    background-color: black;
+    width: 295px;
+    height: 295px;
+    margin: 0 auto;
+}
+
+.image img{
+    width: 295px;
+    height: 295px;
+}
+
+.image p {
+    font-family: 'Genty Sans', 'Montserrat Arabic', Arial;
+    font-size: 20px;
+    color: white;
+    line-height: 295px;
+    text-align: center;
+}
