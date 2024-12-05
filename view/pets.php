@@ -110,11 +110,11 @@
     <script>
         window.onload = function () {
             const pets = [
-                { name: 'Peekaboo', type: 'Cat', breed: 'Domestic Cat', availability: 'Eligible', age: 3, gender: 'Male', personality: 'Friendly', coat: 'Gray, black, and white with black stripes and white paws', eyes: 'Bright yellow-green.', image: 'public/images/Peekaboo.png'},
-                { name: 'Hansolo', type: 'Cat', breed: 'Domestic Cat', availability: 'Adopted', age: 2, gender: 'Male', personality: 'Extraverted', coat: 'Gray, black, and white with black stripes and white paws', eyes: 'Green', image: 'public/images/hansolo.png'},
-                { name: 'Periwinkle', type: 'Cat', breed: 'Domestic Cat', availability: 'Eligible', age: 3, gender: 'Female', personality: 'Playful', coat: 'White with black markings on the head and tail', eyes: 'Bright yellow', image: 'public/images/periwinkle.png'},
-                { name: 'Gustav', type: 'Dog', breed: 'Bichon Frise', availability: 'Adopted', age: 12, gender: 'Male', personality: 'Playful', coat: 'White', eyes: 'Brown', image: 'public/images/gustavo.png'},
-                { name: 'Chanel', type: 'Dog', breed: 'Bichon Frise', availability: 'Eligible', age: 15, gender: 'Female', personality: 'Relaxed', coat: 'White', eyes: 'Brown', image: 'public/images/chanel.png'}
+                { name: 'Peekaboo', type: 'Cat', breed: 'Domestic Cat', availability: 'Eligible', age: 3, gender: 'Male', personality: 'Friendly', coat: 'Gray, black, and white with black stripes and white paws', eyes: 'Bright yellow-green.', image: '../public/images/Peekaboo.png'},
+                { name: 'Hansolo', type: 'Cat', breed: 'Domestic Cat', availability: 'Adopted', age: 2, gender: 'Male', personality: 'Extraverted', coat: 'Gray, black, and white with black stripes and white paws', eyes: 'Green', image: '../public/images/hansolo.png'},
+                { name: 'Periwinkle', type: 'Cat', breed: 'Domestic Cat', availability: 'Eligible', age: 3, gender: 'Female', personality: 'Playful', coat: 'White with black markings on the head and tail', eyes: 'Bright yellow', image: '../public/images/periwinkle.png'},
+                { name: 'Gustav', type: 'Dog', breed: 'Bichon Frise', availability: 'Adopted', age: 12, gender: 'Male', personality: 'Playful', coat: 'White', eyes: 'Brown', image: '../public/images/gustavo.png'},
+                { name: 'Chanel', type: 'Dog', breed: 'Bichon Frise', availability: 'Eligible', age: 15, gender: 'Female', personality: 'Relaxed', coat: 'White', eyes: 'Brown', image: '../public/images/chanel.png'}
             ];
 
             const gallery = document.querySelector('.gallery .imgcont');
